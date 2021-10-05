@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TodoApp</string>
+
+    <string name="add_button">Add</string>
+    <string name="remove_button">Remove</string>
+    <string name="submit_button">Submit</string>
+    <string name="delete_button">Delete</string>
+    <string name="edit_button">Edit</string>
+    <string-array name="show_spinner">
+        <item>All</item>
+        <item>Todo</item>
+        <item>Doing</item>
+        <item>Done</item>
+    </string-array>
+    <string-array name="spinner_choice">
+        <item>Todo</item>
+        <item>Doing</item>
+        <item>Done</item>
+    </string-array>
+</resources>
