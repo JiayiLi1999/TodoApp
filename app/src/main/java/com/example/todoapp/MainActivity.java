@@ -19,21 +19,6 @@ public class MainActivity extends AppCompatActivity implements TodoListFragment.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Spinner orderView = findViewById(R.id.order_spinner);
-//        orderView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                if(position!=order){
-//                    order = position;
-//                    updateByNewOrder(order);
-//                }
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//            }
-//
-//        });
     }
 
     private void updateByNewOrder(int order) {
@@ -47,14 +32,6 @@ public class MainActivity extends AppCompatActivity implements TodoListFragment.
         TodoListFragment fragobj = new TodoListFragment();
         fragobj.setArguments(bundle);
 
-    }
-
-    private void filterTodo(int statusSelection) {
-        Bundle bundle = new Bundle();
-        bundle.putInt("status", statusSelection);
-        // set Fragmentclass Arguments
-        Fragment frag = new TodoListFragment();
-        frag.setArguments(bundle);
     }
 
     @Override
