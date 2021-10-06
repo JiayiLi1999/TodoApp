@@ -6,11 +6,10 @@
     <string name="submit_button">Submit</string>
     <string name="delete_button">Delete</string>
     <string name="edit_button">Edit</string>
-    <string-array name="show_spinner">
-        <item>All</item>
-        <item>Todo</item>
-        <item>Doing</item>
-        <item>Done</item>
+    <string name="searching_hint">Searching</string>
+    <string-array name="sort_by">
+        <item>Time</item>
+        <item>A-Z</item>
     </string-array>
     <string-array name="spinner_choice">
         <item>Todo</item>

@@ -12,12 +12,41 @@ import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity implements TodoListFragment.Listener {
 
-    private int statusSelection = 0;
+    private int order = 0;
+    static final String[] statusList = {"todo","doing","done"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Spinner orderView = findViewById(R.id.order_spinner);
+        orderView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position!=order){
+                    order = position;
+                    updateByNewOrder(order);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+
+        });
+    }
+
+    private void updateByNewOrder(int order) {
+        Bundle bundle = new Bundle();
+        if(order==0){
+            bundle.putString("order", "TIMESTAMP DESC");
+        }else{
+            bundle.putString("order", "TITLE");
+        }
+        // set Fragmentclass Arguments
+        TodoListFragment fragobj = new TodoListFragment();
+        fragobj.setArguments(bundle);
+
     }
 
     private void filterTodo(int statusSelection) {
@@ -45,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements TodoListFragment.
             startActivity(intent);
         }
     }
+
+
 
     public void onClickAddButton(View view) {
         Intent intent = new Intent(this, AddTodo.class);
